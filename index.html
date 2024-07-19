@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
+    <title>Two Containers with Drop Shadow</title>
+    <style>
+        body {
+            display: flex; 
+            margin: 0;
+            background-color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .container-column {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin: 10%;
+            gap: 20px; /* Space between the containers */   
+        }
+
+        .container-row {
+            display: flex;
+            flex-direction: row;
+            gap: 20px; /* Space between the containers */
+        }
+
+        .container {
+            background-color: white;
+            width: 300px;
+            height: 200px;
+            border-radius: 25px;
+            padding: 20px;
+            transition: transform 0.6s ease, box-shadow 0.6s ease; /* Smooth and slow transition */
+        }
+
+        
+
+        .container-one {
+            display: flex;
+            flex-direction: column; /* Stack items vertically */
+            justify-content: space-between; /* Space between content and buttons */
+            position: relative;
+            padding: 30px;
+            color: black; /* Ensure text color is black */
+            width: 65%;
+            height: 450px;
+            border-radius: 25px;
+            overflow: hidden; /* Ensure pseudo-element stays within container */
+            box-sizing: border-box;
+        }
+        .container-one:hover {
+            transform: scale(1.03); /* Slightly scales up the container */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+        }
+
+        .container-one::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #d3d3d3, #f0e68c, #add8e6);
+            opacity: 0.5; /* Set opacity for background */
+            z-index: -1; /* Place background behind the text */
+            border-radius: 25px;
+        }
+
+        .container-two {
+            box-sizing: border-box;
+            background-color: white;
+            width: 35%;
+            height: 450px;
+            background-color: #c5b34a;
+            border-radius: 25px;
+            padding: 0px;
+        }
+        .container-two:hover {
+            transform: scale(1.03); /* Slightly scales up the container */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+        }
+
+        .container-two img {
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+            object-fit: cover; /* Ensures the image fills the container without stretching */
+        }
+
+        @media (max-width: 768px) {
+            .container-two {
+                width: 100%;
+                height: 50vh; /* Adjust height for smaller screens */
+            }
+        }
+
+        .container-three {
+            background-color: white;
+            width: 50%;
+            height: 350px;
+            border-radius: 25px;
+            padding: 20px;
+            background-image: url('app2.png'); /* Set background image */
+            background-size: cover; /* Ensure image covers the container */
+            background-position: center; /* Center the background image */
+            background-repeat: no-repeat; /* Prevent repeating the image */
+            color: white; /* Ensure text color contrasts with the background */
+        }
+        .container-three:hover {
+            transform: scale(1.03); /* Slightly scales up the container */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+        }
+
+        .container-four {
+            background-color: white;
+            width: 50%;
+            height: 350px;
+            border-radius: 25px;
+            padding: 20px;
+            background-image: url('app3.png'); /* Set background image */
+            background-size: cover; /* Ensure image covers the container */
+            background-position: center; /* Center the background image */
+            background-repeat: no-repeat; /* Prevent repeating the image */
+            color: white; /* Ensure text color contrasts with the background */
+        }
+        .container-four:hover {
+            transform: scale(1.03); /* Slightly scales up the container */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+        }
+
+        .head-one {
+            font-size: 35px;
+            text-align: left;
+            font-weight: 700; 
+            font-family: Arial, sans-serif;
+        }
+
+        .head-two {
+            font-size: 15px;
+            text-align: left;
+            font-weight: 200; 
+            font-family: Arial, sans-serif;
+        }
+
+        .button-group {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Space between the buttons */
+        }
+
+        .pill-button {
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 50px; /* Creates the pill shape */
+            padding: 10px 20px;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .pill-button i {
+            margin-right: 8px; /* Space between icon and text */
+            font-size: 18px;
+        }
+
+        .pill-button:hover {
+            background-color: #333; /* Slightly lighter shade on hover */
+        }
+
+        .social-button {
+            background-color: white;
+            border-radius: 50%; /* Creates circular buttons */
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: black;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition effect */
+        }
+
+        .social-button:hover {
+            background-color: black;
+            color: white;
+        }
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white; /* White background color for header */
+    border-bottom: 1px solid #ddd; /* Thin border */
+    z-index: 1000; /* Ensures header is above other content */
+}
+
+.container-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 20px;
+    font-size: 16px;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+main {
+    margin-top: 60px; /* Adjust this if needed to avoid content overlapping the header */
+    padding: 20px;
+}
+    </style>
+    
+</head>
+<body>
+
+    <header>
+        <div class="container-header">
+            <div class="logo">Sumit</div>
+            <nav class="menu">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="service.html">Works</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    
+<div class="container-column">
+    <div class="container-row">
+        <div class="container-one">
+            <div style="width: 80%;">
+                <h1 class="head-one">Hey, I'm Sumit, a product designer with 7 years of experience</h1>
+                <div style="height: 30%;">
+                    <p class="head-two">I care a lot about using design for positive impact and enjoy creating user-centric, delightful, and human experiences.</p>
+                </div>
+            </div>
+            <div class="button-group">
+                <button class="pill-button">
+                    <i class="fas fa-check"></i> <!-- Font Awesome icon -->
+                    Click Me
+                </button>
+                <div class="social-button"><i class="fab fa-facebook-f"></i></div>
+                <div class="social-button"><i class="fab fa-twitter"></i></div>
+                <div class="social-button"><i class="fab fa-instagram"></i></div>
+            </div>
+        </div>
+        <div class="container-two">
+            <img src="avatar.png" alt="Portfolio Picture">
+        </div>
+    </div>
+    <div class="container-row">
+        <div class="container-four">
+            <p>The Working Apps</p>
+        </div>
+        <div class="container-four">
+            <p>My Best Designs</p>
+        </div>
+    </div>
+
+    <div class="container-row">
+        <div class="container-three">
+            
+            <p>The Working Apps</p>
+        </div>
+        <div class="container-four">
+            <p>My Best Designs</p>
+        </div>
+    </div>
+
+    <div class="container-row">
+        <div class="container-three">
+            <p>The Working Apps</p>
+        </div>
+        <div class="container-four">
+            <p>My Best Designs</p>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300i,400,400i,500,600,700,800" rel="stylesheet">		
+		<link href="fonts/font-awesome.min.css" rel="stylesheet"/>
+		<link rel="icon" href="images/favicon.jpg"/>
+		<link href="fonts/themify-icons.css" rel="stylesheet"/>
+		<link href="fonts/etline.css" rel="stylesheet"/>
+		<link href="css/plugins.css" rel="stylesheet"/>
+		<link href="css/lightbox.min.css" rel="stylesheet"/>
+		<link href="css/responsive.css" rel="stylesheet"/>
+		<link href="css/style.css" rel="stylesheet"/>
+    <title>Document</title>
+</head>
+<body>
+    <!-- START NAVBAR -->
+			<div class="navbar navbar-default navbar-fixed-top menu-top">
+				<div class="container">
+					<div class="logo">
+						<a href="index.html" class="navbar-brand"><p>Sumit</p></a>
+						<div class="mobile-nav"></div>
+					</div>
+					
+					<div id="navbar" class="main_menu">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="about.html">About</a></li>
+							<li><a href="service.html">Service</a></li>											
+							<li><a href="contact.html">Contact</a></li>
+						</ul>
+					</div> 
+				</div><!--- END CONTAINER -->
+			</div> 
+		<!-- END NAVBAR -->			
+    <!-- START CONTACT -->
+			<section id="contact" class="gray_bg section_padding">
+				<div class="container">
+					<div class="col-md-12 col-sm-12-col-xs-12">
+						<div class="section_heading text-center">
+							<h2>Contact <span>Us</span></h2>							
+							<div class="sm_border"></div>
+						</div>	
+					</div>	
+					
+					<div class="row">						
+						<div class="col-md-12 col-sm-12">
+							<form class="form" name="enq" method="post" action="contact.php" onsubmit="return validation();">
+								<div class="row">
+									<div class="form-group col-md-4">
+										<input type="text" name="name" class="form-control" placeholder="Name" required="required">
+									</div>
+									<div class="form-group col-md-4">
+										<input type="email" name="email" class="form-control" placeholder="Email" required="required">
+									</div>
+									<div class="form-group col-md-4">
+										<input type="text" name="subject" class="form-control" placeholder="Subject" required="required">
+									</div>
+									<div class="form-group col-md-12">
+										<textarea rows="6" name="message" class="form-control" placeholder="Your Message" required="required"></textarea>
+									</div>
+									<div class="col-md-12 text-center">
+										<button type="submit" value="Send message" name="submit" id="submitButton" class="btn btn-default main_btn" title="Submit Your Message!">Send Message</button>
+									</div>
+								</div>
+							</form>
+						</div>						
+					</div>
+				</div>
+			</section>
+		<!-- END CONTACT -->
+		
+		<!-- START FOOTER -->
+			<div class="footer">
+				<div class="container">					
+					<div class="copy-text text-center wow fadeInDown">
+						<p>CopyRight © 2024 Sumit | All Rights Reserved</p>
+					</div>											
+				</div>						
+			</div>	
+		<!-- END FOOTER -->
+</body>
+</html>
